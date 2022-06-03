@@ -1,0 +1,48 @@
+.sign-in-page-container {
+    font-family: 'Oswald', sans-serif;
+}
+
+.sign-in-title {
+    margin: 25px 0 35px 0;
+}
+
+.email-input,
+.password-input {
+    border: 2px solid #e0e0e0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.forgot-password-btn {
+    background-color: transparent;
+    border: 0;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.sign-in-btn {
+    background-color: black;
+    color: white;
+    border: 0;
+    border-radius: 999px;
+    margin-top: 30px;
+    width: 75%;
+    height: 55px;
+}
+
+.hr {
+    width: 100px;
+    height: 1.2px;
+    background-color: #e0e0e0;
+    margin-top: 5px;
+}
+
+.switch-to-join-btn {
+    background-color: transparent;
+    border: 0;
+    font-weight: 300;
+}
+
+.switch-to-join-btn span {
+    font-weight: 400;
+}

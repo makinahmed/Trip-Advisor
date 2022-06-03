@@ -1,0 +1,19 @@
+.join-container {
+    font-family: 'Oswald', sans-serif;
+}
+
+.join-container-title {
+    margin: 25px 0 35px 0;
+}
+
+.name-input {
+    width: 200px !important;
+}
+
+.name-input,
+.create-email-input,
+.create-password-input {
+    border: 2px solid #e0e0e0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
