@@ -22,15 +22,15 @@ const Join = ({ setIsJoin }) => {
         registerUser(createUser.email, createUser.password)
         
 
-     fetch(`http://localhost:5000/add-user`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(createUser)
-        })
-            .then(res => res.json())
-            .then(data => setError(data.message))
+     fetch(`http://localhost:8000/add-user`, {
+       method: "PUT",
+       headers: {
+         "content-type": "application/json",
+       },
+       body: JSON.stringify(createUser),
+     })
+       .then((res) => res.json())
+       .then((data) => setError(data.message));
     }
 
     // console.log("I am error ",error);

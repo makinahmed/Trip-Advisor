@@ -29,8 +29,9 @@ const EditProfile = () => {
     
     const user = auth.currentUser;
 // 
-    fetch(`http://localhost:5000/edit-profile?email=${user?.email}`, {
+    fetch(`http://localhost:8000/edit-profile?email=${user?.email}`, {
       method: "PUT",
+
       body: formData,
     })
       .then((response) => response.json())

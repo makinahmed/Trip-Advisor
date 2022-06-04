@@ -73,7 +73,7 @@ const useFirebase = () => {
       .then((result) => {
         setUser(result.user);
 
-        fetch(`http://localhost:5000/add-user-by-google`, {
+        fetch(`http://localhost:8000/add-user-by-google`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",
