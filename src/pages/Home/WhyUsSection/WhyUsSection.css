@@ -1,0 +1,40 @@
+.why-us-section {
+    background-color: #f4f7ff;
+    background-size: contain;
+    height: auto;
+}
+
+.why-us-section .content h1 {
+    font-weight: 500;
+}
+
+.why-us-section .content p {
+    font-size: 20px;
+}
+
+.why-us-section .why-us-card {
+    height: 100%;
+    position: relative;
+}
+
+.why-us-section .why-us-card .btn-container {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.why-us-section .why-us-card .btn-container button {
+    width: 80%;
+    height: 40px;
+}
+
+/* MEDIA QUEY FOR RESPONSIVENESS */
+
+@media only screen and (max-width: 767px) {
+    .why-us-section .content {
+        text-align: center;
+    }
+}

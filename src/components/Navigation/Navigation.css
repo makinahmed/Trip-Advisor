@@ -1,13 +1,18 @@
 /* NAVBAR AREA STYLES STARTED  */
 
+.navbar {
+    background-color: white;
+}
+
 .navbar-logo {
     width: 188px;
 }
 
 .nav-item {
-    margin-left: 10px;
-    border-radius: 999px !important;
+    border-radius: 12px !important;
     transition: .2s linear;
+    padding: 0px 12px;
+    font-weight: 500;
 }
 
 .nav-item:hover {
@@ -16,8 +21,8 @@
 
 .nav-link {
     color: black !important;
-    font-family: 'Oswald', sans-serif;
-    padding: 8px 10px;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 .fa-heart,
@@ -26,23 +31,22 @@
     font-size: 18px;
 }
 
-.sign-in-link {
-    background-color: black;
-    width: 80px;
+.sign-in-link,
+.review-link {
+    border: 1px solid black;
     text-align: center;
+    padding: 0 15px;
 }
 
+.review-link:hover,
 .sign-in-link:hover {
     background-color: black;
-}
-
-.sign-in-link>.nav-link {
     color: white !important;
-    transition: .2s linear;
 }
 
-.sign-in-link>.nav-link:hover {
-    background-color: #e9e9e94b;
+.review-link:hover .nav-link,
+.sign-in-link:hover .nav-link {
+    color: white !important;
 }
 
 /* NAVBAR AREA STYLES ENDED  */

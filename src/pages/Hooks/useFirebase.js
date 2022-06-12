@@ -20,15 +20,17 @@ const useFirebase = () => {
   const [error, setError] = useState("");
   const [mailSent, setMailSent] = useState(false);
   const [userMail, setUserMail] = useState("");
+  const [userData, setUserData] = useState({});
 
   const googleProvider = new GoogleAuthProvider();
 
   const auth = getAuth();
-// console.log(userMail, userMail);
+  // console.log(userMail, userMail);
   // update users email
+  console.log(userData, " user data");
 
   const updateUserEmail = (newEmail) =>
-    updateEmail(auth.currentUser, newEmail)
+    updateEmail(auth?.currentUser, newEmail)
       .then(() => {
         console.log("Email Updated");
       })
@@ -38,9 +40,7 @@ const useFirebase = () => {
 
   //   register new user
 
-
   const registerUser = (email, password) => {
-    
     createUserWithEmailAndPassword(auth, email, password)
       .then((newUser) => {
         setUser(newUser?.user);
@@ -49,12 +49,11 @@ const useFirebase = () => {
       .catch((error) => {
         setError(error.message);
       })
-      .finally(() => setUserMail(user.email));;
+      .finally(() => setUserMail(user?.email));
   };
 
   // sign in user with email and password
   const signInUser = (email, password) => {
-    
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         setUser(userCredential?.user);
@@ -63,17 +62,16 @@ const useFirebase = () => {
       .catch((error) => {
         setError(error.message);
       })
-      .finally(() => setUserMail(user.email));
+      .finally(() => setUserMail(user?.email));
   };
   //   sign in user with google
 
   const signinWithGoogle = () => {
-    
     signInWithPopup(auth, googleProvider)
       .then((result) => {
-        setUser(result.user);
+        setUser(result?.user);
 
-        fetch(`http://localhost:8000/add-user-by-google`, {
+        fetch(`https://tripadvisorarshad.herokuapp.com/add-user-by-google`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",
@@ -83,8 +81,7 @@ const useFirebase = () => {
       })
       .catch((error) => {
         setError(error);
-      })
-       
+      });
   };
 
   // reset password mail
@@ -113,16 +110,23 @@ const useFirebase = () => {
   // Current User
 
   useEffect(() => {
-    const auth = getAuth();
-    const user = auth.currentUser;
-    setUser(user)
-  },[])
+    const user = auth?.currentUser;
+    setUser(user);
+  }, []);
+
+  useEffect(() => {
+    fetch(
+      `https://tripadvisorarshad.herokuapp.com/user-data?email=${user?.email}`
+    )
+      .then((res) => res.json())
+      .then((data) => setUserData(data))
+      .finally((e) => console.log(e));
+  }, [user?.email]);
 
   // manage state
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      
       if (user) {
         user
           .getIdToken()
@@ -146,6 +150,7 @@ const useFirebase = () => {
     mailSent,
     userMail,
     updateUserEmail,
+    userData,
   };
 };
 export default useFirebase;

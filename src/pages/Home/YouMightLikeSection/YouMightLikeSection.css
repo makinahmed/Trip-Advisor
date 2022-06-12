@@ -1,0 +1,78 @@
+.you-might-like-section .section-heading {
+    font-size: 30px !important;
+    color: #000000;
+}
+
+.you-might-like-section .section-sub-heading {
+    font-size: 18px;
+    color: #000000;
+}
+
+.you-might-like-section .section-content button {
+    width: 286px;
+    height: 55px;
+    background-color: #4066e3;
+    color: #ffffff;
+    font-size: 20px;
+    border-radius: 999px;
+    border: 0;
+}
+
+.you-might-like-section .card-container .card {
+    border-radius: 30px;
+    background-color: #ffffff;
+    position: relative;
+}
+
+
+.you-might-like-section .card-container .card-title {
+    font-size: 25px;
+    color: #000000;
+}
+
+.you-might-like-section .card-container .save-container {
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff94;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.card-container .save-container .fa-heart {
+    font-size: 30px;
+}
+
+.rating-container {
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    bottom: 112px;
+    padding: 5px;
+}
+
+.rating-content {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #0b9500;
+    border-radius: 50%;
+    color: #0b9500;
+    font-size: 18px;
+}
+
+/* MEDIA QUERY FOR RESPONSIVENESS */
+
+@media only screen and (max-width: 767px) {
+    .you-might-like-section .section-content {
+        flex-direction: column;
+    }
+
+    .you-might-like-section .section-content div {
+        text-align: center;
+    }
+}

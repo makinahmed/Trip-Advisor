@@ -6,8 +6,7 @@ import SignUpPage from "../authentication/SignUpPage/SignUpPage";
 import "./Navigation.css";
 
 const Navigation = () => {
-  const {user,signOutUser} = useAuth()
-  // console.log(user);
+    const { user, signOutUser } = useAuth();
   return (
     //   NAVBAR STARTED HERE
     <>
@@ -35,8 +34,7 @@ const Navigation = () => {
                   aria-current="page"
                   to="/"
                 >
-                  <i className="fa-solid fa-pencil me-2"></i>
-                  Reviews
+                  Halal Hotels
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -45,8 +43,7 @@ const Navigation = () => {
                   aria-current="page"
                   to="/"
                 >
-                  <i className="fa-regular fa-heart me-2"></i>
-                  Trips
+                  Halal Restaurants
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -55,43 +52,59 @@ const Navigation = () => {
                   aria-current="page"
                   to="/"
                 >
-                  <i className="fa-regular fa-bell me-2"></i>
-                  Alerts
+                  Halal Tours
                 </NavLink>
               </li>
-              <li className="nav-item">
+              <li className="nav-item me-5">
+                <NavLink
+                  className="nav-link text-decoration-none"
+                  aria-current="page"
+                  to="/"
+                >
+                  Halal Insurance
+                </NavLink>
+              </li>
+              <li className="nav-item review-link ms-5 me-3">
+                <NavLink className="nav-link text-decoration-none" to="/">
+                  Write Review
+                </NavLink>
+              </li>
+             { user?.email && <li className="nav-item">
                 <NavLink
                   className="nav-link text-decoration-none"
                   aria-current="page"
                   to="/user-dashboard"
                 >
                   <i class="fa-solid fa-bars-progress me-2"></i>
-
                   Dashboard
                 </NavLink>
-              </li>
-              {! user?.email?  <li className="nav-item sign-in-link">
-             <NavLink
-                  className="nav-link text-decoration-none"
-                  aria-current="page"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
-                  to="/"
-                >
-                  Sign In
-                </NavLink>
-              </li> :<li className="nav-item sign-in-link">
-             <NavLink
-                  className="nav-link text-decoration-none"
-                  aria-current="page"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
-                  to="/"
-                  onClick={signOutUser}
-                >
-                Log Out
-                </NavLink>
               </li>}
+              {!user?.email ? (
+                <li className="nav-item sign-in-link">
+                  <NavLink
+                    className="nav-link text-decoration-none"
+                    aria-current="page"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    to="/"
+                  >
+                    Sign In
+                  </NavLink>
+                </li>
+              ) : (
+                <li className="nav-item sign-in-link">
+                  <NavLink
+                    className="nav-link text-decoration-none"
+                    aria-current="page"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    to="/"
+                    onClick={signOutUser}
+                  >
+                    Log Out
+                  </NavLink>
+                </li>
+              )}
             </ul>
           </div>
         </div>

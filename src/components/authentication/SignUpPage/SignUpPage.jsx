@@ -2,18 +2,17 @@ import React, { useState } from "react";
 import logo from "../../../assets/images/logo-img.svg";
 import googleIcon from "../../../assets/images/google-icon.png";
 import facebookIcon from "../../../assets/images/facebook-icon.png";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./SignUpPage.css";
 import SignInPage from "../SignInPage/SignInPage";
 import Join from "./Join";
 import useAuth from "../../../pages/Hooks/useAuth";
 
 const SignUpPage = () => {
-  const [loginUser,setLoginUser] = useState()
   const [isClick, setIsClick] = useState(false);
   const [isForgetPassword, setIsForgetPassword] = useState(false);
   const [isJoin, setIsJoin] = useState(false);
-  const {signinWithGoogle} = useAuth()
+ const { signinWithGoogle } = useAuth();
   return (
     // MODAL FOR SIGN-IN POPUP STARTED
 
@@ -90,7 +89,9 @@ const SignUpPage = () => {
                         />
                       </div>
                       <div className="text-center w-100">
-                        <span onClick={signinWithGoogle}>Continue with Google</span>
+                        <span onClick={signinWithGoogle}>
+                          Continue with Google
+                        </span>
                       </div>
                     </div>
                     <div className="sign-up-btn-container">
@@ -152,7 +153,10 @@ const SignUpPage = () => {
             <p className="px-3 mt-2">
               <small>
                 This site is protected by reCAPTCHA and the Google{" "}
-                <a href="https://policies.google.com/privacy" className="text-dark" >
+                <a
+                  href="https://policies.google.com/privacy"
+                  className="text-dark"
+                >
                   Privacy Policy
                 </a>{" "}
                 and <br />

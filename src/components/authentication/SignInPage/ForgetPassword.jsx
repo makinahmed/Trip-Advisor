@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useAuth from "../../../pages/Hooks/useAuth";
 import "./ForgetPassword.css";
+
 const ForgetPassword = () => {
   const [user, setUser] = useState({});
   const { resetPassword, mailSent } = useAuth();
@@ -17,7 +18,6 @@ const ForgetPassword = () => {
   return (
     <div className="forget-password-container">
       <h3 className="forget-password-in-title">Forgot your password?</h3>
-
       <p>
         <small>
           No problem. Just enter your email address below — we’ll send you a
@@ -41,8 +41,8 @@ const ForgetPassword = () => {
         <div className="text-center">
           <button
             type="submit"
-            onClick={handleOnClick}
             className="forget-password-submit-btn"
+            onClick={handleOnClick}
           >
             Send Link
           </button>

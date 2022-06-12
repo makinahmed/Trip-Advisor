@@ -3,16 +3,17 @@ import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../pages/Hooks/useAuth";
 import ForgetPassword from "./ForgetPassword";
 import "./SignInPage.css";
+
 const SignInPage = ({ isForgetPassword, setIsForgetPassword, setIsJoin }) => {
   const { signInUser } = useAuth();
 
   const [loginUser, setLoginUser] = useState({});
-  // location and history 
-  const location = useLocation()
-    const history = useNavigate()
+  // location and history
+  const location = useLocation();
+  const history = useNavigate();
 
-    // console.log(location, 'Location', history,'history');
-  // set email and password 
+  // console.log(location, 'Location', history,'history');
+  // set email and password
   const handleOnBlur = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -22,19 +23,15 @@ const SignInPage = ({ isForgetPassword, setIsForgetPassword, setIsJoin }) => {
     setLoginUser(newLoginUser);
   };
 
-  //  submit 
+  //  submit
   const handleOnClick = (e) => {
-    e.preventDefault()
-    console.log(loginUser.email, loginUser.password, 'submit data');
+    e.preventDefault();
+    console.log(loginUser.email, loginUser.password, "submit data");
     signInUser(loginUser.email, loginUser.password);
-  
-    
   };
-  // console.log(loginUser, ' i am form sign in page');
   return (
     // SIGN-IN PAGE STARTED HERE
     <div>
-  
       {!isForgetPassword ? (
         <div className="sign-in-page-container">
           <h3 className="sign-in-title">Welcome Back.</h3>
@@ -44,7 +41,7 @@ const SignInPage = ({ isForgetPassword, setIsForgetPassword, setIsJoin }) => {
             </label>
             <div className="input-group mb-3">
               <input
-              name = "email"
+                name="email"
                 type="text"
                 className="form-control email-input"
                 id="email"
@@ -58,7 +55,7 @@ const SignInPage = ({ isForgetPassword, setIsForgetPassword, setIsJoin }) => {
             </label>
             <div className="input-group mb-2">
               <input
-               name = "password"
+                name="password"
                 type="text"
                 className="form-control password-input"
                 id="password"
@@ -103,8 +100,8 @@ const SignInPage = ({ isForgetPassword, setIsForgetPassword, setIsJoin }) => {
         // CALLING THE FORGET-PASSWORD COMPONENT
         <ForgetPassword />
       )}
-    
-</div>
+    </div>
+
     // SIGN-IN PAGE ENDED HERE
   );
 };

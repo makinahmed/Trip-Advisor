@@ -1,0 +1,136 @@
+/* BANNER TOP STYLE STARTED HERE */
+
+.banner-container-top {
+    max-width: 100%;
+    height: 639px;
+    background-image: url('../../../assets/images/home-banner-.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    padding: 0 70px;
+    position: relative;
+}
+
+.banner-content-top {
+    width: 320px;
+}
+
+.banner-content-top .banner-heading {
+    color: white;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.banner-content-top .banner-search-container {
+    width: 100%;
+    height: 55px;
+    background-color: white;
+    border: 1px solid #707070;
+}
+
+.banner-search-container input {
+    outline: none;
+    font-size: 18px;
+}
+
+.banner-content-bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+}
+
+.banner-content-bottom .banner-bottom-sub-heading {
+    color: #ffffff;
+}
+
+.recent-view-main {
+    display: flex;
+}
+
+.recent-view-container {
+    max-width: 100%;
+    height: 70px;
+    background-color: #ffffff8c;
+    border: 1px solid #707070;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.recent-view-container span {
+    font-size: 20px;
+    color: #000000;
+}
+
+
+/* BANNER TOP STYLE ENDED HERE */
+
+/* BANNER BOTTOM STYLE STARTED HERE */
+
+.banner-bottom-category {
+    background-color: white;
+    border: 1px solid #707070;
+    border-radius: 15px;
+    height: 70px;
+    padding: 30px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: .3s linear;
+}
+
+.banner-bottom-category .category-name {
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.banner-bottom-category:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.banner-bottom-category .category-img {
+    transition: .3s linear;
+}
+
+.banner-bottom-category:hover .category-img {
+    filter: brightness(0) invert(1);
+}
+
+/* BANNER BOTTOM STYLE ENDED HERE */
+
+
+/* MEDIA QUERY FOR RESPONSIVENESS  */
+
+@media only screen and (max-width: 767px) {
+    .banner-container-top {
+        padding: 0 20px;
+        background-position: -1000px;
+    }
+
+    .banner-content-top {
+        width: 100%;
+        margin-bottom: 100px;
+    }
+
+    .banner-content-bottom {
+        width: 95%;
+    }
+
+    .banner-bottom-sub-heading {
+        margin-bottom: 20px;
+    }
+
+    .recent-view-main {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .recent-view-container {
+        width: 100%;
+        height: 50px;
+        padding: 20px !important;
+        line-height: 24px;
+        margin-bottom: 10px;
+    }
+}
